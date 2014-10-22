@@ -174,15 +174,15 @@ class ResultSet(object):
         self._resultset_cache = []
 
         for match in self._mset:
-            doc = match.get_document()
+            doc = match.document
 
             model = doc.get_value(2)
             model = get_model(*model.split('.'))
             pk = model._meta.pk.to_python(doc.get_value(1))
 
-            percent = match.get_percent()
-            rank = match.get_rank()
-            weight = match.get_weight()
+            percent = match.percent
+            rank = match.rank
+            weight = match.weight
 
             tags = dict([(tag.prefix, tag.extract(doc))\
                                 for tag in self._indexer.tags])
