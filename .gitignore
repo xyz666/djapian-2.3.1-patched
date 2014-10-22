@@ -1,0 +1,8 @@
+*.*~
+*.pyc
+.DS_Store
+._*
+pip-log.txt
+.idea/*
+Thumbs.db
+*.bak
